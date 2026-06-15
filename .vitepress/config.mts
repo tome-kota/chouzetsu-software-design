@@ -5,6 +5,7 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 export default defineConfig({
   title: "輪読会",
   description: "ちょうぜつソフトウェア設計入門輪読会の要約記事です",
+  base: '/chouzetsu-software-design/',
   lang: 'ja-JP',
   srcDir: './docs',
   markdown: {
@@ -33,7 +34,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/tome-kota/chouzetsu-software-design' }
     ]
   }
 })

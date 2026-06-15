@@ -1,0 +1,77 @@
+# ワークフロー名（GitHub Actions の画面に表示される）
+name: Deploy VitePress site to Pages
+
+# ワークフローの実行トリガー
+on:
+  push:
+    branches: [main] # main ブランチへのプッシュで自動実行
+  workflow_dispatch: # GitHub 画面から手動実行も可能
+
+# ワークフローに付与する権限
+permissions:
+  contents: read # リポジトリの読み取り権限
+  pages: write # GitHub Pages への書き込み権限
+  id-token: write # OIDC トークンの発行権限（Pages 認証に必要）
+
+# 同時実行の制御
+concurrency:
+  group: pages # 同じグループのワークフローは同時実行しない
+  cancel-in-progress: false # 実行中のワークフローはキャンセルしない
+
+jobs:
+  # ========================================
+  # ビルドジョブ: サイトをビルドしてアーティファクトを作成
+  # ========================================
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # リポジトリのコードをチェックアウト
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 全履歴を取得（lastUpdated の表示に必要）
+
+      # pnpm のセットアップ
+      # v4 以降は package.json の packageManager フィールドからバージョンを自動検出
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      # Node.js のセットアップ（pnpm キャッシュも有効化）
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      # GitHub Pages の設定を取得
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 依存パッケージのインストール（ロックファイルを厳守して再現性を確保）
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # VitePress でサイトをビルド（.vitepress/dist に出力）
+      - name: Build with VitePress
+        run: pnpm docs:build
+
+      # ビルド成果物をアーティファクトとしてアップロード
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .vitepress/dist # ビルド出力ディレクトリ
+
+  # ========================================
+  # デプロイジョブ: ビルド成果物を GitHub Pages に公開
+  # ========================================
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # デプロイ先 URL
+    needs: build # build ジョブの完了を待つ
+    runs-on: ubuntu-latest
+    steps:
+      # GitHub Pages にデプロイ
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
