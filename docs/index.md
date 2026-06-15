@@ -10,6 +10,12 @@ hero:
     - theme: brand
       text: 第1章を読む
       link: /chapter-1
+    - theme: alt
+      text: 第2章を読む
+      link: /chapter-2
+    - theme: alt
+      text: 第3章を読む
+      link: /chapter-3
 
 features:
   - title: 要点整理

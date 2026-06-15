@@ -16,14 +16,18 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: '第1章', link: '/chapter-1' }
+      { text: '第1章', link: '/chapter-1' },
+      { text: '第2章', link: '/chapter-2' },
+      { text: '第3章', link: '/chapter-3' }
     ],
 
     sidebar: [
       {
         text: '輪読まとめ',
         items: [
-          { text: '第1章 クリーンアーキテクチャ', link: '/chapter-1' }
+          { text: '第1章 クリーンアーキテクチャ', link: '/chapter-1' },
+          { text: '第2章 パッケージ原則', link: '/chapter-2' },
+          { text: '第3章 オブジェクト指向', link: '/chapter-3' }
         ]
       }
     ],
