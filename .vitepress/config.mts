@@ -20,7 +20,8 @@ export default defineConfig({
       { text: '第1章', link: '/chapter-1' },
       { text: '第2章', link: '/chapter-2' },
       { text: '第3章', link: '/chapter-3' },
-      { text: '第4章', link: '/chapter-4' }
+      { text: '第4章', link: '/chapter-4' },
+      { text: '第5章', link: '/chapter-5' }
     ],
 
     sidebar: [
@@ -30,7 +31,8 @@ export default defineConfig({
           { text: '第1章 クリーンアーキテクチャ', link: '/chapter-1' },
           { text: '第2章 パッケージ原則', link: '/chapter-2' },
           { text: '第3章 オブジェクト指向', link: '/chapter-3' },
-          { text: '第4章 UML（統一モデリング言語）', link: '/chapter-4' }
+          { text: '第4章 UML（統一モデリング言語）', link: '/chapter-4' },
+          { text: '第5章 オブジェクト指向 SOLID', link: '/chapter-5' }
         ]
       }
     ],
