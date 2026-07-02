@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: 第3章を読む
       link: /chapter-3
+    - theme: alt
+      text: 第4章を読む
+      link: /chapter-4
 
 features:
   - title: 要点整理
