@@ -22,6 +22,12 @@ hero:
     - theme: alt
       text: 第5章を読む
       link: /chapter-5
+    - theme: alt
+      text: 第6章を読む
+      link: /chapter-6
+    - theme: alt
+      text: 第7章を読む
+      link: /chapter-7
 
 features:
   - title: 要点整理

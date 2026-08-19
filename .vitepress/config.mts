@@ -21,7 +21,9 @@ export default defineConfig({
       { text: '第2章', link: '/chapter-2' },
       { text: '第3章', link: '/chapter-3' },
       { text: '第4章', link: '/chapter-4' },
-      { text: '第5章', link: '/chapter-5' }
+      { text: '第5章', link: '/chapter-5' },
+      { text: '第6章', link: '/chapter-6' },
+      { text: '第7章', link: '/chapter-7' }
     ],
 
     sidebar: [
@@ -32,7 +34,9 @@ export default defineConfig({
           { text: '第2章 パッケージ原則', link: '/chapter-2' },
           { text: '第3章 オブジェクト指向', link: '/chapter-3' },
           { text: '第4章 UML（統一モデリング言語）', link: '/chapter-4' },
-          { text: '第5章 オブジェクト指向 SOLID', link: '/chapter-5' }
+          { text: '第5章 オブジェクト指向 SOLID', link: '/chapter-5' },
+          { text: '第6章 テスト駆動開発', link: '/chapter-6' },
+          { text: '第7章 依存性注入', link: '/chapter-7' }
         ]
       }
     ],
