@@ -28,6 +28,15 @@ hero:
     - theme: alt
       text: 第7章を読む
       link: /chapter-7
+    - theme: alt
+      text: 第8章（前半）を読む
+      link: /chapter-8-1
+    - theme: alt
+      text: 第8章（後半）を読む
+      link: /chapter-8-2
+    - theme: alt
+      text: 第9章を読む
+      link: /chapter-9
 
 features:
   - title: 要点整理

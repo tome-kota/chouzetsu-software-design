@@ -23,7 +23,10 @@ export default defineConfig({
       { text: '第4章', link: '/chapter-4' },
       { text: '第5章', link: '/chapter-5' },
       { text: '第6章', link: '/chapter-6' },
-      { text: '第7章', link: '/chapter-7' }
+      { text: '第7章', link: '/chapter-7' },
+      { text: '第8章（前半）', link: '/chapter-8-1' },
+      { text: '第8章（後半）', link: '/chapter-8-2' },
+      { text: '第9章', link: '/chapter-9' }
     ],
 
     sidebar: [
@@ -36,7 +39,10 @@ export default defineConfig({
           { text: '第4章 UML（統一モデリング言語）', link: '/chapter-4' },
           { text: '第5章 オブジェクト指向 SOLID', link: '/chapter-5' },
           { text: '第6章 テスト駆動開発', link: '/chapter-6' },
-          { text: '第7章 依存性注入', link: '/chapter-7' }
+          { text: '第7章 依存性注入', link: '/chapter-7' },
+          { text: '第8章 デザインパターン（前半）', link: '/chapter-8-1' },
+          { text: '第8章 デザインパターン（後半）', link: '/chapter-8-2' },
+          { text: '第9章 アジャイル開発', link: '/chapter-9' }
         ]
       }
     ],
